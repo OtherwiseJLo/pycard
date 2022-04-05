@@ -25,10 +25,10 @@ class Deck:
         Shuffles the cards list
 
     """
-    def __init__(self, rank: RankEnum, suit: SuitEnum):
+    def __init__(self):
         """
         """
-        self.cards = [Card(r, s) for r, s in it.product(rank, suit)]
+        self.cards = [Card(r, s) for r, s in it.product(RankEnum, SuitEnum)]
 
     def shuffle(self) -> None:
         """
@@ -50,6 +50,12 @@ class Deck:
         list
             A list of cards drawn from the deck
         """
-        drawn_cards = self.cards[:number_of_cards]
-        self.cards = self.cards[number_of_cards:]
-        return drawn_cards
+        if self.cards:
+            drawn_cards = self.cards[:number_of_cards]
+            self.cards = self.cards[number_of_cards:]
+            return drawn_cards
+        else:
+            raise ValueError("Deck is empty")
+
+    def __len__(self) -> int:
+        return len(self.cards)

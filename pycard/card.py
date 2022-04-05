@@ -31,7 +31,6 @@ class SuitEnum(IntEnum):
     CLUBS = 2
     DIAMONDS = 3
     HEARTS = 4
-    KING = 13
 
 
 @dataclass(order=True, frozen=True, slots=True)
@@ -51,8 +50,8 @@ class Card:
     rank: RankEnum
     suit: SuitEnum
 
-    def __ge__(self, other: Card) -> bool:
-        return self.rank >= other.rank
+    # def __ge__(self, other: Card) -> bool:
+    #     return self.rank >= other.rank
 
     def __repr__(self) -> str:
         return f"{self.rank.name} OF {self.suit.name}"
