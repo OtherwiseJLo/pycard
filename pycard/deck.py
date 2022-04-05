@@ -25,9 +25,9 @@ class Deck:
         Shuffles the cards list
 
     """
+
     def __init__(self):
-        """
-        """
+        """ """
         self.cards = [Card(r, s) for r, s in it.product(RankEnum, SuitEnum)]
 
     def shuffle(self) -> None:
@@ -36,7 +36,7 @@ class Deck:
         """
         shuffle(self.cards)
 
-    def draw(self, number_of_cards: int=1) -> List[Card]:
+    def draw(self, number_of_cards: int = 1) -> List[Card]:
         """
         Pick cards from deck
 

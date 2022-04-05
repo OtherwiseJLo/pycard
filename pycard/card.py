@@ -8,6 +8,7 @@ class RankEnum(IntEnum):
     """
     Enum class holding rank enums
     """
+
     ACE = 1
     TWO = 2
     THREE = 3
@@ -27,6 +28,7 @@ class SuitEnum(IntEnum):
     """
     Enum class holding suit enums
     """
+
     SPADES = 1
     CLUBS = 2
     DIAMONDS = 3
@@ -47,6 +49,7 @@ class Card:
     suit : EnumMeta
         An enum object with card suit
     """
+
     rank: RankEnum
     suit: SuitEnum
 

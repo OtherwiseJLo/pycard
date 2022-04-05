@@ -3,13 +3,13 @@ import pytest
 
 
 def test_deck_successfully_initialized():
-    """ Assert that the starting card size if 52"""
+    """Assert that the starting card size if 52"""
     deck = Deck()
     assert len(deck) == 52
 
 
 def test_deck_draw_card():
-    """ Assert that drawing a card reduces the size of the deck"""
+    """Assert that drawing a card reduces the size of the deck"""
     deck = Deck()
     for i in range(1, 53):
         deck.draw()
@@ -26,7 +26,7 @@ def test_deck_draw_card_from_empty_deck_raises_exception():
 
 
 def test_deck_shuffle():
-    """ Assert the shuffled deck cards do not match the ordered deck cards"""
+    """Assert the shuffled deck cards do not match the ordered deck cards"""
     ordered_deck = Deck()
     shuffled_deck = Deck()
     shuffled_deck.shuffle()
