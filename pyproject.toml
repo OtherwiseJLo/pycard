@@ -1,38 +1,33 @@
+[build-system]
+requires = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
+
 [project]
 name = "pycard"
-version = "0.0.1"
-description = "Python package for a standard 52 card deck"
-author = "Jonathan Lopez (OtherwiseJLo)"
-license = "MIT"
+authors = [{ name = "Jonathan Lopez", email = "jonathanglopez@gmail.com" }]
+license = { file = "LICENSE" }
 readme = "README.md"
-python = "^3.7"
-homepage = "https://github.com/OtherwiseJLo/pycard"
-repository = "https://github.com/OtherwiseJLo/pycard"
-documentation = "https://github.com/OtherwiseJLo/pycard"
+requires-python = ">=3.10"
+keywords = ["probability", "simulation", "cards", "deck"]
+dynamic = ["version", "description"]
 
-keywords = ["games", "probability", "simulation", "cards", "deck"]
+[project.urls]
+Home = "https://github.com/otherJL0/pycard"
+Source = "https://github.com/otherJL0/pycard"
+Documentation = "https://github.com/otherJL0/pycard"
 
-[dependencies]
 
-[dev-dependencies]
-black = {version = "^18.3-alpha.0", python = "^3.7"}
-pytest = {version = "^18.3-alpha.0", python = "^3.7"}
-
-[build-system]
-requires = [
-  "setuptools >= 35.0.2",
-  "setuptools_scm >= 2.0.0, <3",
-]
-build-backend = "setuptools.build_meta"
+[project.optional-dependencies]
+test = ["pytest", "pytest-cov", "coverage", "tox", "nox"]
+doc = ["sphinx"]
+build = ["flit", "pip-tools", "pre-commit"]
+lint = ["isort", "flake8", "black", "mypy", "pylint"]
 
 [tool.black]
 line-length = 88
-target_version = ['py37']
+target_version = ['py310']
 
 [tool.pytest.ini_options]
 minversion = "6.0"
 addopts = "-ra -q"
-testpaths = [
-    "tests",
-    "integration",
-]
+testpaths = ["tests", "integration"]

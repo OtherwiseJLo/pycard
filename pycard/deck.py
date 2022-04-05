@@ -1,10 +1,8 @@
 import itertools as it
-from enum import EnumMeta, IntEnum
 from random import shuffle
-from typing import Iterator, List, Tuple
+from typing import List
 
-from pycard.card import Card
-from pycard import RankEnum, SuitEnum
+from pycard.card import Card, RankEnum, SuitEnum
 
 
 class Deck:
